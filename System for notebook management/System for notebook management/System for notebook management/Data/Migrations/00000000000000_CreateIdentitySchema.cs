@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 
-namespace ProjectR.Data.Migrations
+namespace System_for_notebook_management.Data.Migrations
 {
     public partial class CreateIdentitySchema : Migration
     {

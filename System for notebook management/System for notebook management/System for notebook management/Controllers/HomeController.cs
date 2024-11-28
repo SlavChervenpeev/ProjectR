@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
-using ProjectR.Models;
 using System.Diagnostics;
+using System_for_notebook_management.Models;
 
-namespace ProjectR.Controllers
+namespace System_for_notebook_management.Controllers
 {
     public class HomeController : Controller
     {

@@ -1,9 +1,8 @@
-﻿using Humanizer.Localisation;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using ProjectR.Models;
 
-namespace ProjectR.Data
+namespace System_for_notebook_management.Data
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {

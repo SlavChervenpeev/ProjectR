@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectR", "ProjectR\ProjectR.csproj", "{40EDEE3C-19EC-48FA-949B-85AD07A0BAFA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "System for notebook management", "System for notebook management\System for notebook management.csproj", "{BFDB0E2E-1077-44D9-8BEA-C3C518E625FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{40EDEE3C-19EC-48FA-949B-85AD07A0BAFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{40EDEE3C-19EC-48FA-949B-85AD07A0BAFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{40EDEE3C-19EC-48FA-949B-85AD07A0BAFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{40EDEE3C-19EC-48FA-949B-85AD07A0BAFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFDB0E2E-1077-44D9-8BEA-C3C518E625FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFDB0E2E-1077-44D9-8BEA-C3C518E625FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFDB0E2E-1077-44D9-8BEA-C3C518E625FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFDB0E2E-1077-44D9-8BEA-C3C518E625FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {74C46F2D-06D0-461E-8CC6-D6776BF9FC11}
+		SolutionGuid = {A4E6296A-E40B-445D-96DC-7C7C9BD14C31}
 	EndGlobalSection
 EndGlobal

@@ -3,10 +3,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace ProjectR.Data.Migrations
+namespace System_for_notebook_management.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class NumberTwo : Migration
+    public partial class NumberOne : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -91,12 +91,12 @@ namespace ProjectR.Data.Migrations
                     NotebookSpecificationsId = table.Column<int>(type: "int", nullable: false),
                     CompanyId = table.Column<int>(type: "int", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Type = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Type = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     NumberOfPages = table.Column<int>(type: "int", nullable: false),
                     Price = table.Column<double>(type: "float", nullable: false),
-                    CoverImage = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CoverImage = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: false),
                     IsWithLines = table.Column<bool>(type: "bit", nullable: false),
-                    PaperType = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    PaperType = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
                 },
                 constraints: table =>
                 {

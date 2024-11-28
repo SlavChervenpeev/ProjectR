@@ -18,11 +18,15 @@ namespace ProjectR.Models
         [Required]
         [StringLength(50)]
         public string Name { get; set; }
+
+        [StringLength(50)]
         public string Type { get; set; }
         public int NumberOfPages { get; set; }
         public double Price { get; set; }
+        [StringLength(1000)]
         public string CoverImage { get; set; }
         public bool IsWithLines { get; set; }
+        [StringLength(50)]
         public string PaperType { get; set; }
     }
 }

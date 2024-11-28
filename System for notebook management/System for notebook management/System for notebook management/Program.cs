@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using ProjectR.Data;
+using System_for_notebook_management.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
