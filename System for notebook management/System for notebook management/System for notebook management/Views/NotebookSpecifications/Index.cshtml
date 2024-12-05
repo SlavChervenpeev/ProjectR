@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ProjectR.Models.Company>
+﻿@model IEnumerable<ProjectR.Models.NotebookSpecifications>
 
 @{
     ViewData["Title"] = "Index";
@@ -142,22 +142,22 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Name)
+                @Html.DisplayNameFor(model => model.Weight)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.YearOfCreation)
+                @Html.DisplayNameFor(model => model.IsRecyclable)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.companyMembers)
+                @Html.DisplayNameFor(model => model.HasRuler)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.AnnualRevenue)
+                @Html.DisplayNameFor(model => model.CreatedDate)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.SoldNotebooks)
+                @Html.DisplayNameFor(model => model.Material)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Address)
+                @Html.DisplayNameFor(model => model.CoverColor)
             </th>
             <th></th>
         </tr>
@@ -166,22 +166,22 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Name)
+                @Html.DisplayFor(modelItem => item.Weight)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.YearOfCreation)
+                @Html.DisplayFor(modelItem => item.IsRecyclable)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.companyMembers)
+                @Html.DisplayFor(modelItem => item.HasRuler)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.AnnualRevenue)
+                @Html.DisplayFor(modelItem => item.CreatedDate)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.SoldNotebooks)
+                @Html.DisplayFor(modelItem => item.Material)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Address)
+                @Html.DisplayFor(modelItem => item.CoverColor)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace ProjectR.Models
+namespace System_for_notebook_management.Models
 {
     public class ApplicationUser : IdentityUser
     {

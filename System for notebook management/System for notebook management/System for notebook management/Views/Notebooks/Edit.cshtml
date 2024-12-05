@@ -1,4 +1,4 @@
-﻿@model ProjectR.Models.Company
+﻿@model ProjectR.Models.Notebook
 
 @{
     ViewData["Title"] = "Edit";
@@ -82,43 +82,68 @@
 </style>
 <h1>Edit</h1>
 
-<h4>Company</h4>
+<h4>Notebook</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
+
+            <div class="form-group">
+                <label asp-for="NotebookSpecificationsId" class="control-label"></label>
+                <select asp-for="NotebookSpecificationsId" class="form-control" asp-items="ViewBag.NotebookSpecificationsId"></select>
+                <span asp-validation-for="NotebookSpecificationsId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="CompanyId" class="control-label"></label>
+                <select asp-for="CompanyId" class="form-control" asp-items="ViewBag.CompanyId"></select>
+                <span asp-validation-for="CompanyId" class="text-danger"></span>
+            </div>
+
             <div class="form-group">
                 <label asp-for="Name" class="control-label"></label>
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="YearOfCreation" class="control-label"></label>
-                <input asp-for="YearOfCreation" class="form-control" />
-                <span asp-validation-for="YearOfCreation" class="text-danger"></span>
+                <label asp-for="Type" class="control-label"></label>
+                <input asp-for="Type" class="form-control" />
+                <span asp-validation-for="Type" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="companyMembers" class="control-label"></label>
-                <input asp-for="companyMembers" class="form-control" />
-                <span asp-validation-for="companyMembers" class="text-danger"></span>
+                <label asp-for="NumberOfPages" class="control-label"></label>
+                <input asp-for="NumberOfPages" class="form-control" />
+                <span asp-validation-for="NumberOfPages" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="AnnualRevenue" class="control-label"></label>
-                <input asp-for="AnnualRevenue" class="form-control" />
-                <span asp-validation-for="AnnualRevenue" class="text-danger"></span>
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="SoldNotebooks" class="control-label"></label>
-                <input asp-for="SoldNotebooks" class="form-control" />
-                <span asp-validation-for="SoldNotebooks" class="text-danger"></span>
+                <label asp-for="CoverImage" class="control-label"></label>
+                <input asp-for="CoverImage" class="form-control" />
+                <span asp-validation-for="CoverImage" class="text-danger"></span>
             </div>
+
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsWithLines" /> @Html.DisplayNameFor(model => model.IsWithLines)
+                </label>
+            </div>
+
             <div class="form-group">
-                <label asp-for="Address" class="control-label"></label>
-                <input asp-for="Address" class="form-control" />
-                <span asp-validation-for="Address" class="text-danger"></span>
+                <label asp-for="PaperType" class="control-label"></label>
+                <input asp-for="PaperType" class="form-control" />
+                <span asp-validation-for="PaperType" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
@@ -131,5 +156,7 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

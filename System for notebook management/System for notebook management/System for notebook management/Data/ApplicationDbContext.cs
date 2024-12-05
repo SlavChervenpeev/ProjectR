@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using ProjectR.Models;
+using System_for_notebook_management.Models;
 
 namespace System_for_notebook_management.Data
 {

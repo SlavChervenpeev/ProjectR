@@ -1,4 +1,4 @@
-﻿@model ProjectR.Models.Company
+﻿@model ProjectR.Models.NotebookSpecifications
 
 @{
     ViewData["Title"] = "Edit";
@@ -82,7 +82,7 @@
 </style>
 <h1>Edit</h1>
 
-<h4>Company</h4>
+<h4>NotebookSpecifications</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -90,34 +90,34 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
+                <label asp-for="Weight" class="control-label"></label>
+                <input asp-for="Weight" class="form-control" />
+                <span asp-validation-for="Weight" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsRecyclable" /> @Html.DisplayNameFor(model => model.IsRecyclable)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="HasRuler" /> @Html.DisplayNameFor(model => model.HasRuler)
+                </label>
             </div>
             <div class="form-group">
-                <label asp-for="YearOfCreation" class="control-label"></label>
-                <input asp-for="YearOfCreation" class="form-control" />
-                <span asp-validation-for="YearOfCreation" class="text-danger"></span>
+                <label asp-for="CreatedDate" class="control-label"></label>
+                <input asp-for="CreatedDate" class="form-control" />
+                <span asp-validation-for="CreatedDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="companyMembers" class="control-label"></label>
-                <input asp-for="companyMembers" class="form-control" />
-                <span asp-validation-for="companyMembers" class="text-danger"></span>
+                <label asp-for="Material" class="control-label"></label>
+                <input asp-for="Material" class="form-control" />
+                <span asp-validation-for="Material" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="AnnualRevenue" class="control-label"></label>
-                <input asp-for="AnnualRevenue" class="form-control" />
-                <span asp-validation-for="AnnualRevenue" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="SoldNotebooks" class="control-label"></label>
-                <input asp-for="SoldNotebooks" class="form-control" />
-                <span asp-validation-for="SoldNotebooks" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Address" class="control-label"></label>
-                <input asp-for="Address" class="form-control" />
-                <span asp-validation-for="Address" class="text-danger"></span>
+                <label asp-for="CoverColor" class="control-label"></label>
+                <input asp-for="CoverColor" class="form-control" />
+                <span asp-validation-for="CoverColor" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />

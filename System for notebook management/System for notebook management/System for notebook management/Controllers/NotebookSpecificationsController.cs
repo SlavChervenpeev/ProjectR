@@ -10,22 +10,22 @@ using System_for_notebook_management.Data;
 
 namespace System_for_notebook_management.Controllers
 {
-    public class CompaniesController : Controller
+    public class NotebookSpecificationsController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public CompaniesController(ApplicationDbContext context)
+        public NotebookSpecificationsController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: Companies
+        // GET: NotebookSpecifications
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Companies.ToListAsync());
+            return View(await _context.NotebookSpecifications.ToListAsync());
         }
 
-        // GET: Companies/Details/5
+        // GET: NotebookSpecifications/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,39 +33,39 @@ namespace System_for_notebook_management.Controllers
                 return NotFound();
             }
 
-            var company = await _context.Companies
+            var notebookSpecifications = await _context.NotebookSpecifications
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (company == null)
+            if (notebookSpecifications == null)
             {
                 return NotFound();
             }
 
-            return View(company);
+            return View(notebookSpecifications);
         }
 
-        // GET: Companies/Create
+        // GET: NotebookSpecifications/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Companies/Create
+        // POST: NotebookSpecifications/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,YearOfCreation,companyMembers,AnnualRevenue,SoldNotebooks,Address")] Company company)
+        public async Task<IActionResult> Create([Bind("Id,Weight,IsRecyclable,HasRuler,CreatedDate,Material,CoverColor")] NotebookSpecifications notebookSpecifications)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                _context.Add(company);
+                _context.Add(notebookSpecifications);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(company);
+            return View(notebookSpecifications);
         }
 
-        // GET: Companies/Edit/5
+        // GET: NotebookSpecifications/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -73,36 +73,36 @@ namespace System_for_notebook_management.Controllers
                 return NotFound();
             }
 
-            var company = await _context.Companies.FindAsync(id);
-            if (company == null)
+            var notebookSpecifications = await _context.NotebookSpecifications.FindAsync(id);
+            if (notebookSpecifications == null)
             {
                 return NotFound();
             }
-            return View(company);
+            return View(notebookSpecifications);
         }
 
-        // POST: Companies/Edit/5
+        // POST: NotebookSpecifications/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,YearOfCreation,companyMembers,AnnualRevenue,SoldNotebooks,Address")] Company company)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Weight,IsRecyclable,HasRuler,CreatedDate,Material,CoverColor")] NotebookSpecifications notebookSpecifications)
         {
-            if (id != company.Id)
+            if (id != notebookSpecifications.Id)
             {
                 return NotFound();
             }
 
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 try
                 {
-                    _context.Update(company);
+                    _context.Update(notebookSpecifications);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!CompanyExists(company.Id))
+                    if (!NotebookSpecificationsExists(notebookSpecifications.Id))
                     {
                         return NotFound();
                     }
@@ -113,10 +113,10 @@ namespace System_for_notebook_management.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(company);
+            return View(notebookSpecifications);
         }
 
-        // GET: Companies/Delete/5
+        // GET: NotebookSpecifications/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -124,34 +124,34 @@ namespace System_for_notebook_management.Controllers
                 return NotFound();
             }
 
-            var company = await _context.Companies
+            var notebookSpecifications = await _context.NotebookSpecifications
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (company == null)
+            if (notebookSpecifications == null)
             {
                 return NotFound();
             }
 
-            return View(company);
+            return View(notebookSpecifications);
         }
 
-        // POST: Companies/Delete/5
+        // POST: NotebookSpecifications/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var company = await _context.Companies.FindAsync(id);
-            if (company != null)
+            var notebookSpecifications = await _context.NotebookSpecifications.FindAsync(id);
+            if (notebookSpecifications != null)
             {
-                _context.Companies.Remove(company);
+                _context.NotebookSpecifications.Remove(notebookSpecifications);
             }
 
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool CompanyExists(int id)
+        private bool NotebookSpecificationsExists(int id)
         {
-            return _context.Companies.Any(e => e.Id == id);
+            return _context.NotebookSpecifications.Any(e => e.Id == id);
         }
     }
 }

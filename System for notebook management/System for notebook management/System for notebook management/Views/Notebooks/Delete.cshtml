@@ -1,7 +1,7 @@
-﻿@model ProjectR.Models.Company
+﻿@model ProjectR.Models.Notebook
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Delete";
 }
 <style>
     body {
@@ -80,12 +80,25 @@
             text-decoration: underline;
         }
 </style>
-<h1>Details</h1>
+<h1>Delete</h1>
 
+<h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>Company</h4>
+    <h4>Notebook</h4>
     <hr />
     <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NotebookSpecifications)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NotebookSpecifications.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Company)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Company.Name)
+        </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Name)
         </dt>
@@ -93,38 +106,46 @@
             @Html.DisplayFor(model => model.Name)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.YearOfCreation)
+            @Html.DisplayNameFor(model => model.Type)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.YearOfCreation)
+            @Html.DisplayFor(model => model.Type)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.companyMembers)
+            @Html.DisplayNameFor(model => model.NumberOfPages)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.companyMembers)
+            @Html.DisplayFor(model => model.NumberOfPages)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.AnnualRevenue)
+            @Html.DisplayNameFor(model => model.Price)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.AnnualRevenue)
+            @Html.DisplayFor(model => model.Price)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SoldNotebooks)
+            @Html.DisplayNameFor(model => model.CoverImage)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SoldNotebooks)
+            @Html.DisplayFor(model => model.CoverImage)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Address)
+            @Html.DisplayNameFor(model => model.IsWithLines)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Address)
+            @Html.DisplayFor(model => model.IsWithLines)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PaperType)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PaperType)
         </dd>
     </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
 </div>
